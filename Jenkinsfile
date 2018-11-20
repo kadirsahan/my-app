@@ -16,7 +16,7 @@ node{
        slackSend baseUrl: 'https://hooks.slack.com/services/',
        channel: '#system',
        color: 'good', 
-       message: 'Welcome to Jenkins, Slack!', 
+       message: 'Hi Admin , this message for Jenkins, Slack!', 
        teamDomain: 'hemlak',
        tokenCredentialId: 'slack-my-demo'
    }
