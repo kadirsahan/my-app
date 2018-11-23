@@ -11,14 +11,11 @@ node{
    }
    stage('Docker-Build'){
       
-      sh "docker build -t ${docker_image}:${BUILD_NUMBER} ."
+      sh "docker build -t 10.141.0.171:5000/hello-world:${BUILD_NUMBER} ."
       echo "Image build complete"
    }
    stage('Docker-Push'){
-      sh "docker tag mytomcat03 ${docker_image}:${BUILD_NUMBER}:5000/${tag_name}"
-      sh "docker push ${docker_image}:${BUILD_NUMBER}:5000/${tag_name}"
-      echo "Image build complete"
+      sh "docker push 10.141.0.171:5000/hello-world:${BUILD_NUMBER}"
+      echo "Image push complete"
    }
 }
-
-
