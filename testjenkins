@@ -10,4 +10,7 @@ node{
    stage('just-test'){
      echo "${BUILD_NUMBER}"
    }
+   stage('just-test'){
+     echo "${USER}"
+   }
 }
