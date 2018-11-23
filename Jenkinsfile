@@ -12,13 +12,8 @@ node{
       echo "Image build complete"
    }
    stage('Docker-Push'){
-      sh "docker tag mytomcat02 10.141.0.171:5000/mytom/tom2"
-      sh "docker push 10.141.0.171:5000/mytom/tom2"
-      echo "Image build complete"
-   }
-   stage('Kubernetes-Deploy'){
-      sh "docker tag mytomcat02 10.141.0.171:5000/mytom/tom2"
-      sh "docker push 10.141.0.171:5000/mytom/tom2"
+      sh "docker tag mytomcat03 10.141.0.171:5000/hello-world"
+      sh "docker push 10.141.0.171:5000/hello-world"
       echo "Image build complete"
    }
    stage('Kubernetes-Deploy'){
