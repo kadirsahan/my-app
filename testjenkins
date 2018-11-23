@@ -8,6 +8,6 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    stage('just-test'){
-     echo build.environment.get("BUILD_NUMBER")
+     echo "${BUILD_NUMBER}"
    }
 }
