@@ -8,7 +8,7 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    stage('Docker-Build'){
-      sh "docker build -t mytomcat02:latest ."
+      sh "docker build -t mytomcat03:latest ."
       echo "Image build complete"
    }
    stage('Docker-Push'){
