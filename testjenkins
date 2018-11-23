@@ -11,6 +11,6 @@ node{
      echo "${BUILD_NUMBER}"
    }
    stage('just-test'){
-     echo "${USER}"
+     def BUILD_NUMBER = getBinding().getVariables()['BUILD_NUMBER']
    }
 }
