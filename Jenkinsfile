@@ -1,4 +1,6 @@
 node{
+   def docker_image = "mytomcat"
+   def tag_name = "hello-world"
    stage('SCM Checkout'){
      git 'https://github.com/kadirsahan/my-app'
    }
@@ -8,12 +10,13 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    stage('Docker-Build'){
-      sh "docker build -t mytomcat03:latest ."
+      
+      sh "docker build -t ${docker_image}:${BUILD_NUMBER} ."
       echo "Image build complete"
    }
    stage('Docker-Push'){
-      sh "docker tag mytomcat03 10.141.0.171:5000/hello-world"
-      sh "docker push 10.141.0.171:5000/hello-world"
+      sh "docker tag mytomcat03 ${docker_image}:${BUILD_NUMBER}:5000/${tag_name}"
+      sh "docker push ${docker_image}:${BUILD_NUMBER}:5000/${tag_name}"
       echo "Image build complete"
    }
    stage('Kubernetes-Deploy'){
