@@ -19,11 +19,6 @@ node{
       sh "docker push ${docker_image}:${BUILD_NUMBER}:5000/${tag_name}"
       echo "Image build complete"
    }
-   stage('Kubernetes-Deploy'){
-      sh "kubectl create -f hello-world-service.yaml"
-      sh "kubectl create -f hello-world-deployment.yaml"
-   }
-   
 }
 
 
