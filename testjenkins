@@ -1,4 +1,7 @@
 node{
+   stage('SCM Checkout'){
+     git 'https://github.com/kadirsahan/my-app'
+   }
    stage('just-test'){
      echo build.environment.get("BUILD_NUMBER")
    }
